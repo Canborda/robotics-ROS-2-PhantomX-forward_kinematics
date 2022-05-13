@@ -10,6 +10,14 @@
   <!-- Load server parameters to publish robot state -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
+  <!-- Teleop keys node -->
+  <node
+    pkg="robotics_lab2"
+    name="keyop_node"
+    type="px_keyop.py"
+    output="screen">
+  </node>
+
   <!-- Load Rviz with config -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
   <!-- <node name="rviz" pkg="rviz" type="rviz" /> -->

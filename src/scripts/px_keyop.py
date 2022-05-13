@@ -55,10 +55,10 @@ JOINTS = {
 LIMITS = {
     'low': -90,
     'high': 90,
-    'step': 5,
+    'step': 2,
 }
 
-def updateScreen():
+def updateScreen(key=None):
     # Restart screen
     os.system('clear')
     # Show start message
@@ -66,6 +66,8 @@ def updateScreen():
     console.log(f" Press {console.highlight('UP')} and {console.highlight('DOWN')} arrows to move between joints")
     console.log(f" Press {console.highlight('LEFT')} and {console.highlight('RIGHT')} arrows to change the value of selected joint")
     console.log(f" Press {console.highlight('1 2 3 4 5')} keys to go to predefined positions")
+    console.log('-'*65)
+    console.warn(f"Pressed key: {key}" if key else "Press a key!")
     console.log('-'*65)
     # Highlight selected joint
     for i in range(len(JOINTS)):
@@ -115,7 +117,7 @@ def keyPressed(key):
     updateSelectedJoint(key)
     updateSelectedValue(key)
     # Run events
-    updateScreen()
+    updateScreen(key)
     publishMessage()
 
 def keyReleased(key):
