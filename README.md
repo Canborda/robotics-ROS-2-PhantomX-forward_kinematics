@@ -1,8 +1,8 @@
 ## robotics_lab2
-# TELEOP PHANTOMX ROBOT WITH ROS
+# KEYOP PHANTOMX ROBOT WITH ROS
 
 
-This repository shows how to connect and teleoperate a Phantom X robot with ROS.
+This repository shows how to connect and operate via keyboard a Phantom X robot with ROS.
 
 > ## Authors
 > 
