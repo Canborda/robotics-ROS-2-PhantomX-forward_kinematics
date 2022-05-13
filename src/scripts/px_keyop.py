@@ -9,17 +9,48 @@ from py_console import console, bgColor, textColor
 from pynput.keyboard import Key, Listener
 
 SELECTED_JOINT = 0
-HOME = {
-    'waist': 0,
-    'shoulder': 0,
-    'elbow': 0,
-    'wrist': 0,
+POSITIONS = {
+    '1': {
+        'waist': 0,
+        'shoulder': 0,
+        'elbow': 0,
+        'wrist': 0,
+        'gripper': 0,
+    },
+    '2': {
+        'waist': -20,
+        'shoulder': 20,
+        'elbow': -20,
+        'wrist': 20,
+        'gripper': 0,
+    },
+    '3': {
+        'waist': 30,
+        'shoulder': -30,
+        'elbow': 30,
+        'wrist': -30,
+        'gripper': 0,
+    },
+    '4': {
+        'waist': -90,
+        'shoulder': 15,
+        'elbow': -55,
+        'wrist': 17,
+        'gripper': 0,
+    },
+    '5': {
+        'waist': -90,
+        'shoulder': 45,
+        'elbow': -55,
+        'wrist': 45,
+        'gripper': 10,
+    },
 }
 JOINTS = {
-    ' waist    ': HOME['waist'],
-    ' shoulder ': HOME['shoulder'],
-    ' elbow    ': HOME['elbow'],
-    ' wrist    ': HOME['wrist'],
+    ' waist    ': POSITIONS['1']['waist'],
+    ' shoulder ': POSITIONS['1']['shoulder'],
+    ' elbow    ': POSITIONS['1']['elbow'],
+    ' wrist    ': POSITIONS['1']['wrist'],
 }
 LIMITS = {
     'low': -90,
@@ -34,7 +65,7 @@ def updateScreen():
     console.log('-'*65)
     console.log(f" Press {console.highlight('UP')} and {console.highlight('DOWN')} arrows to move between joints")
     console.log(f" Press {console.highlight('LEFT')} and {console.highlight('RIGHT')} arrows to change the value of selected joint")
-    console.log(f" Press {console.highlight('SPACE')} key to go to HOME position")
+    console.log(f" Press {console.highlight('1 2 3 4 5')} keys to go to predefined positions")
     console.log('-'*65)
     # Highlight selected joint
     for i in range(len(JOINTS)):
@@ -45,6 +76,16 @@ def updateScreen():
         value = console.highlight(str(JOINTS[joint]), bgColor='', textColor=txt)
         console.log(f"\t{name}\t{value} deg")
     console.log('-'*65)
+
+def predefinedPositions(key):
+    try:
+        currentKey = key.char
+    except AttributeError:
+        currentKey = key
+    if currentKey in POSITIONS.keys():
+        for i in range(len(JOINTS)):
+            joint = list(POSITIONS[currentKey].keys())[i]
+            JOINTS[list(JOINTS.keys())[i]] = POSITIONS[currentKey][joint]
 
 def updateSelectedJoint(key):
     global SELECTED_JOINT
@@ -57,11 +98,6 @@ def updateSelectedValue(key):
     if key == Key.right: JOINTS[joint] = JOINTS[joint] + LIMITS['step'] if JOINTS[joint] < LIMITS['high'] else LIMITS['high']
     if key == Key.left: JOINTS[joint] = JOINTS[joint] - LIMITS['step'] if JOINTS[joint] > LIMITS['low'] else LIMITS['low']
 
-def goHome():
-    joints = JOINTS.keys()
-    for joint in joints:
-        JOINTS[joint] = HOME[joint.replace(' ', '')]
-
 def publishMessage():
     # Define and fill message
     state = JointState()
@@ -73,10 +109,12 @@ def publishMessage():
     pub.publish(state)
 
 def keyPressed(key):
+    # Seek events
     if key == Key.esc: sys.exit()
-    if key == Key.space: goHome()
+    predefinedPositions(key)
     updateSelectedJoint(key)
     updateSelectedValue(key)
+    # Run events
     updateScreen()
     publishMessage()
 
