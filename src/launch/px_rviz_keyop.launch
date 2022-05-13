@@ -1,0 +1,17 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="$(find robotics_lab2)/src/urdf/px_collision.urdf"/>
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find robotics_lab2)/src/config/config.rviz"/>
+  
+  <!-- Load robot -->
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+
+  <!-- Load server parameters to publish robot state -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!-- Load Rviz with config -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
+  <!-- <node name="rviz" pkg="rviz" type="rviz" /> -->
+
+</launch>
