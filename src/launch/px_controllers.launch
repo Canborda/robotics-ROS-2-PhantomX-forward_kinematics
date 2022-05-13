@@ -9,6 +9,7 @@
 
   <param name="dynamixel_info"          value="$(find robotics_lab2)/src/config/joints.yaml"/>
 
+  <!-- Dynamixel controller for PhantomX robot -->
   <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
         required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)">
     <param name="use_moveit"              value="$(arg use_moveit)"/>
@@ -25,8 +26,34 @@
     <remap from="/dynamixel_workbench/joint_trajectory" to="joint_trajectory"/>
   </node>
 
+  <!-- Position translator Node -->
+  <node
+    pkg="robotics_lab2"
+    name="translator_node"
+    type="px_translatepos.py"
+    output="screen">
+  </node>
+
+  <!-- Teleop keys node -->
+  <node
+    pkg="robotics_lab2"
+    name="keyop_node"
+    type="px_keyop.py"
+    output="screen">
+  </node>
+
+  <!-- RVIZ -->
+
+  <arg name="model" default="$(find robotics_lab2)/src/urdf/px_collision.urdf"/>
+  <arg name="rvizconfig" default="$(find robotics_lab2)/src/config/config.rviz"/>
+
+  <!-- Load robot -->
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+
+  <!-- Load server parameters to publish robot state -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
   <!-- Load Rviz with config -->
-  <!-- <arg name="rvizconfig" default="$(find robotics_lab2)/src/config/config.rviz"/>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/> -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
 
 </launch>

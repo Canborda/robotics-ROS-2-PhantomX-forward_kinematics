@@ -23,10 +23,9 @@ def jointCommand(command, id_num, addr_name, value, time=0):
         print(str(exc))
 
 def callback(data):
-    rospy.loginfo(data.position)
     rawPosition = list(map(lambda p: int(511*((p/LIMIT) + 1)), data.position))
-
-    print(rawPosition)
+    rospy.loginfo(data.position)
+    rospy.loginfo(rawPosition)
 
     #  Parse JointState (rad) to DynamixelCommand
     for i in range(len(lastPos)):
@@ -39,7 +38,7 @@ def listener():
     rospy.init_node(node_name)
     rospy.loginfo(f'>> STATUS: Node \"{node_name}\" initialized.')
     # Subscribe to topic
-    rospy.Subscriber("/keyop_joint_states", JointState, callback)
+    rospy.Subscriber("/joint_states", JointState, callback)
     # Set torque limits
     jointCommand('', 1, 'Torque_Limit', 600, 0)
     jointCommand('', 2, 'Torque_Limit', 500, 0)

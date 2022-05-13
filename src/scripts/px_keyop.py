@@ -105,7 +105,7 @@ def publishMessage():
     state.name = list(map(lambda s: s.replace(' ', ''), JOINTS.keys()))
     state.position = list(map(lambda p: p*np.pi/180, JOINTS.values()))
     # Create publisher and publish message
-    pub = rospy.Publisher('/keyop_joint_states', JointState, queue_size=0)
+    pub = rospy.Publisher('/joint_states', JointState, queue_size=0)
     pub.publish(state)
 
 def keyPressed(key):
