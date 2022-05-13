@@ -55,7 +55,7 @@
     </inertial> 
   </link>
 
-  <joint name="joint_1" type="revolute">
+  <joint name="waist" type="revolute">
     <origin xyz="0.0 0.0 0.09" rpy="0.0 0.0 0.0"/>
     <parent link="base_link"/>
     <child link="link1"/>
@@ -63,12 +63,12 @@
     <limit lower="-2.32" upper="2.32" effort="10.0" velocity="1.57"/>
   </joint>
 
-  <transmission name="trans_joint_1">
+  <transmission name="trans_waist">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_1">
+    <joint name="waist">
       <hardwareInterface>hardware_interface/PositionJointInterface </hardwareInterface > 
     </joint >
-    <actuator name="motor_joint_1">
+    <actuator name="motor_waist">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator> 
   </transmission>
@@ -96,7 +96,7 @@
     </inertial> 
   </link>
 
-  <joint name="joint_2" type="revolute">
+  <joint name="shoulder" type="revolute">
     <origin xyz="0.0 0.0 0.042" rpy="1.5707 0.0 0.0"/>
     <parent link="link1"/>
     <child link="link2"/>
@@ -104,12 +104,12 @@
     <limit lower="-2.32" upper="2.32" effort="10.0" velocity="1.57"/>
   </joint>
 
-  <transmission name="trans_joint_2">
+  <transmission name="trans_shoulder">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_2">
+    <joint name="shoulder">
       <hardwareInterface>hardware_interface/PositionJointInterface </hardwareInterface > 
     </joint >
-    <actuator name="motor_joint_2">
+    <actuator name="motor_shoulder">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator> 
   </transmission>
@@ -137,7 +137,7 @@
     </inertial> 
   </link>
 
-  <joint name="joint_3" type="revolute">
+  <joint name="elbow" type="revolute">
     <origin xyz="0.0 0.1065 0" rpy="0.0 0.0 0.0"/>
     <parent link="link2"/>
     <child link="link3"/>
@@ -145,12 +145,12 @@
     <limit lower="-2.32" upper="2.32" effort="10.0" velocity="1.57"/>
   </joint>
 
-  <transmission name="trans_joint_3">
+  <transmission name="trans_elbow">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_3">
+    <joint name="elbow">
       <hardwareInterface>hardware_interface/PositionJointInterface </hardwareInterface > 
     </joint >
-    <actuator name="motor_joint_3">
+    <actuator name="motor_elbow">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator> 
   </transmission>
@@ -178,7 +178,7 @@
     </inertial> -->
   </link>
 
-  <joint name="joint_4" type="revolute">
+  <joint name="wrist" type="revolute">
     <origin xyz="0.0 0.1065 0" rpy="0.0 0.0 0.0"/>
     <parent link="link3"/>
     <child link="link4"/>
@@ -186,12 +186,12 @@
     <limit lower="-2.32" upper="2.32" effort="10.0" velocity="1.57"/>
   </joint>
 
-  <transmission name="trans_joint_4">
+  <transmission name="trans_wrist">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_4">
+    <joint name="wrist">
       <hardwareInterface>hardware_interface/PositionJointInterface </hardwareInterface > 
     </joint >
-    <actuator name="motor_joint_4">
+    <actuator name="motor_wrist">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator> 
   </transmission>

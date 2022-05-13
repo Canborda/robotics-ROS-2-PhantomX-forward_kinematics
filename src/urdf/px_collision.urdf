@@ -58,7 +58,7 @@
     </inertial> -->
   </link>
 
-  <joint name="joint_1" type="revolute">
+  <joint name="waist" type="revolute">
     <origin xyz="0.0 0.0 0.09" rpy="0.0 0.0 0.0"/>
     <parent link="base_link"/>
     <child link="link1"/>
@@ -89,7 +89,7 @@
     </inertial> -->
   </link>
 
-  <joint name="joint_2" type="revolute">
+  <joint name="shoulder" type="revolute">
     <origin xyz="0.0 0.0 0.042" rpy="1.5707 0.0 0.0"/>
     <parent link="link1"/>
     <child link="link2"/>
@@ -120,7 +120,7 @@
     </inertial> -->
   </link>
 
-  <joint name="joint_3" type="revolute">
+  <joint name="elbow" type="revolute">
     <origin xyz="0.0 0.1065 0" rpy="0.0 0.0 0.0"/>
     <parent link="link2"/>
     <child link="link3"/>
@@ -151,7 +151,7 @@
     </inertial> -->
   </link>
 
-  <joint name="joint_4" type="revolute">
+  <joint name="wrist" type="revolute">
     <origin xyz="0.0 0.1065 0" rpy="0.0 0.0 0.0"/>
     <parent link="link3"/>
     <child link="link4"/>
