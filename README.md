@@ -142,3 +142,15 @@ grav =    0  base = 1  0  0  0   tool =   0           0           1         8.5
                     0  0  0  1            0           0           0           1
 
 ```
+
+q = [0, 0, 0, 0]
+
+<img src="assets/pxm1.png" margin='auto' width="500" height="400">
+
+q = [15, 60, 30, 10]
+
+<img src="assets/pxm2.png" margin='auto' width="500" height="400">
+
+q = [30, -15, 60, 60]
+
+<img src="assets/pxm3.png" margin='auto' width="500" height="400">
