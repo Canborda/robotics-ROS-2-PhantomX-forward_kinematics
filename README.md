@@ -85,7 +85,7 @@ This command will start several nodes:
 
 ## Procedimiento
 
-<img src="assets/pxPose.jpeg" margin='auto' width="500" height="400">
+<img src="assets/pxPose.jpeg" margin='auto' width="500" height="600">
 
 Establezca las longitudes de eslabón para cada articulación del robot Phantom X Pincher, para este proceso apóyese en un CALIBRADOR. Recuerde que la longitud de eslabón es la mínima distancia que conecta dos juntas consecutivas. Genere un diagrama como el presentado en la figura 2 con los datos medidos.
 
@@ -119,7 +119,7 @@ Teniendo en cuenta que:
 
 ## ToolBox:
 
-<img src="assets/pxbgt.png" margin='auto' width="500" height="400">
+<img src="assets/pxbgt.png" margin='auto' width="800" height="400">
 
 ```
 
