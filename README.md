@@ -110,16 +110,16 @@ Teniendo en cuenta que:
 ```
 |     | medida(mm) |
 | --- | ---------- |
-| l1  | 140        |
-| l2  | 105        |
-| l3  | 105        |
-| l4  | 85         |
+| l1  |    140     |
+| l2  |    105     |
+| l3  |    105     |
+| l4  |    85      |
 
 ```
 
 ## ToolBox:
 
-<img src="assets/pxpgt.png" margin='auto' width="500" height="400">
+<img src="assets/pxbgt.png" margin='auto' width="500" height="400">
 
 ```
 
