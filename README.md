@@ -67,15 +67,8 @@ This command will start several nodes:
 
 > Demonstration
 
-<iframe
-    width="640"
-    height="480"
-    src="https://youtu.be/bwpQzLy1iMY"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
+![controller mode package demonstration](./assets/controller_mode.gif)
+[Watch full video here](https://youtu.be/bwpQzLy1iMY)
 
 <br>
 
@@ -85,7 +78,7 @@ This command will start several nodes:
 
 ## Procedimiento
 
-<img src="assets/pxPose.jpeg" margin='auto' width="500" height="600">
+<img src="assets/pxPose.jpeg" margin='auto' width="500">
 
 Establezca las longitudes de eslabón para cada articulación del robot Phantom X Pincher, para este proceso apóyese en un CALIBRADOR. Recuerde que la longitud de eslabón es la mínima distancia que conecta dos juntas consecutivas. Genere un diagrama como el presentado en la figura 2 con los datos medidos.
 
@@ -94,20 +87,19 @@ Análisis:
 - Con las dimensiones medidas obtenga los parámetros DHstd del robot Phantom X Pincher.
 - Genere diagrama del robot con las tablas de parámetros articulares.
 
-```
 |     | ai  | alpha | di  | Theta | off  |
 | --- | --- | ----- | --- | ----- | ---- |
 | 1   | 0   | Pi/2  | l1  | q1    | 0    |
 | 2   | l2  | 0     | 0   | q2    | Pi/2 |
 | 3   | l3  | 0     | 0   | q3    | 0    |
 | 4   | l4  | 0     | 0   | q4    | 0    |
-```
 
-<img src="assets/px1tr.png" margin='auto' width="500" height="400">
+
+<img src="assets/px1tr.png" margin='auto' width="500">
 
 Teniendo en cuenta que:
 
-```
+
 |     | medida(mm) |
 | --- | ---------- |
 | l1  |    140     |
@@ -115,11 +107,11 @@ Teniendo en cuenta que:
 | l3  |    105     |
 | l4  |    85      |
 
-```
+<br>
 
 ## ToolBox:
 
-<img src="assets/pxbgt.png" margin='auto' width="800" height="400">
+<img src="assets/pxbgt.png" margin='auto' width="800">
 
 ```
 
@@ -145,12 +137,12 @@ grav =    0  base = 1  0  0  0   tool =   0           0           1         8.5
 
 q = [0, 0, 0, 0]
 
-<img src="assets/pxm1.png" margin='auto' width="500" height="400">
+<img src="assets/pxm1.png" margin='auto' width="500">
 
 q = [15, 60, 30, 10]
 
-<img src="assets/pxm2.png" margin='auto' width="500" height="400">
+<img src="assets/pxm2.png" margin='auto' width="500">
 
 q = [30, -15, 60, 60]
 
-<img src="assets/pxm3.png" margin='auto' width="500" height="400">
+<img src="assets/pxm3.png" margin='auto' width="500">
