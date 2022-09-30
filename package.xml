@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>robotics_lab2</name>
+  <name>robotics-ros-2-phantomx-forward_kinematics</name>
   <version>0.0.0</version>
-  <description>The robotics_lab2 package</description>
+  <description>The robotics-ros-2-phantomx-forward_kinematics package</description>
 
   <author email="caabordagi@unal.edu.co">Camilo Borda</author>
   <maintainer email="caabordagi@unal.edu.co">Canborda</maintainer>

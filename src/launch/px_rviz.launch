@@ -1,8 +1,8 @@
 <launch>
   <!-- Arguments -->
-  <arg name="model" default="$(find robotics_lab2)/src/urdf/px_collision.urdf"/>
+  <arg name="model" default="$(find robotics-ros-2-phantomx-forward_kinematics)/src/urdf/px_collision.urdf"/>
   <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find robotics_lab2)/src/config/config.rviz"/>
+  <arg name="rvizconfig" default="$(find robotics-ros-2-phantomx-forward_kinematics)/src/config/config.rviz"/>
   
   <!-- Load robot -->
   <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>

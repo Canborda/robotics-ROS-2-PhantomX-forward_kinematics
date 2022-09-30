@@ -1,4 +1,4 @@
-## robotics_lab2
+## robotics-ros-2-phantomx-forward_kinematics
 
 # KEYOP PHANTOMX ROBOT WITH ROS
 
@@ -20,8 +20,8 @@ This repository shows how to connect and operate via keyboard a Phantom X robot 
 The first thing to do is to clone this repository (inside your catkin workspace) and build the package for ROS:
 
 ```
-git clone https://github.com/Canborda/robotics_lab2.git
-catkin build robotics_lab2
+git clone https://github.com/Canborda/robotics-ros-2-phantomx-forward_kinematics.git
+catkin build robotics-ros-2-phantomx-forward_kinematics
 source devel/setup.bash
 ```
 
@@ -39,7 +39,7 @@ To launch the package you have two modes: you can test it with a real [PhantomX 
 <br>
 
 ```
-roslaunch robotics_lab2 px_rviz_keyop.launch
+roslaunch robotics-ros-2-phantomx-forward_kinematics px_rviz_keyop.launch
 ```
 
 For this mode you won't need anything additional to this package! It will start the Rviz interface with a model of the _PhantomX robot_ and a cli to control the different joints position.
@@ -55,7 +55,7 @@ For this mode you won't need anything additional to this package! It will start 
 <br>
 
 ```
-roslaunch robotics_lab2 px_controllers.launch
+roslaunch robotics-ros-2-phantomx-forward_kinematics px_controllers.launch
 ```
 
 This command will start several nodes:
