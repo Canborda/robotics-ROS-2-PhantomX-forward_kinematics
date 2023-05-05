@@ -55,7 +55,7 @@ JOINTS = {
 LIMITS = {
     'low': -90,
     'high': 90,
-    'step': 2,
+    'step': 5,
 }
 
 def updateScreen(key=None):
