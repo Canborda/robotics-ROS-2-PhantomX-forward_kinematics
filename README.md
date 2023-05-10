@@ -4,17 +4,13 @@
 
 This repository shows how to connect and operate via keyboard a Phantom X robot with ROS.
 
-> ## Authors
->
-> - Camilo Andrés Borda Gil
-> - Edwin Alfredo Higuera Bustos
-
-<br>
+> ## Contributors
+> 
+> - [Camilo Andrés Borda Gil](https://github.com/Canborda) (caabordagi@unal.edu.co)
+> - Paula Sofía Medina Diaz (psmedinadi@unal.edu.co)
+> - Robinson Jair Orduz Gomez (rjorduzg@unal.edu.co)
 
 ---
-
-<br>
-
 ## How to Use the Package
 
 The first thing to do is to clone this repository (inside your catkin workspace) and build the package for ROS:
@@ -44,9 +40,11 @@ roslaunch robotics-ros-2-phantomx-forward_kinematics px_rviz_keyop.launch
 
 For this mode you won't need anything additional to this package! It will start the Rviz interface with a model of the _PhantomX robot_ and a cli to control the different joints position.
 
-> Demonstration
+This command will start the `keyop_node` which publishes a message of type [sensor_msgs/JointState Message](http://docs.ros.org/en/melodic/api/sensor_msgs/html/msg/JointState.html) via a topic called `/joint_states`; and the `robot_state_publisher` node which is subscribed to the same topic and process all info to update the robot pose in Rviz. This is the **rqt_graph** for the simulation mode:
+<p align="center"><img src="assets/graph_simulation.png" width="800" alt="simulation mode graph"></p>
 
-![simulation mode package demonstration](./assets/simulation_mode.gif)
+#### Demonstration
+https://github.com/Canborda/robotics-ROS-2-PhantomX-forward_kinematics/assets/55401093/8849acc1-fdd9-45cb-8839-ffa4ed3ad2b4
 
 <br>
 
@@ -60,15 +58,16 @@ roslaunch robotics-ros-2-phantomx-forward_kinematics px_controllers.launch
 
 This command will start several nodes:
 
-- The `dynamixel_workbench_controllers` node allows the communication between ROS and the robot.
-- The `px_keyop` node starts a pretty cli so you can select a joint to move or change between five predefined positions.
-- The `joint_states_translator` node just receives all the joints position in radians from the keyop node, and maps them into the bit-level units for the dynamixel package.
+- The `dynamixel_workbench` node allows the communication between ROS and the robot.
+- The `keyop_node` starts a pretty cli so you can select a joint to move or change between five predefined positions (same node as in simulation mode).
+- The `translator_node` just receives all the joints position in radians from the keyop node, and maps them into the bit-level units for the dynamixel package.
 - The `rviz` node for **real time visualization** of your robot configuration.
 
-> Demonstration
+The **rqt_graph** for the controller mode is the following:
+<p align="center"><img src="assets/graph_controller.png" width="800" alt="controller mode graph"></p>
 
-![controller mode package demonstration](./assets/controller_mode.gif)
-[Watch full video here](https://youtu.be/bwpQzLy1iMY)
+#### Demonstration
+https://github.com/Canborda/robotics-ROS-2-PhantomX-forward_kinematics/assets/55401093/cf0c642b-6a47-4377-a112-f91548f0321e
 
 <br>
 
