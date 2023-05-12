@@ -67,7 +67,7 @@ The **rqt_graph** for the controller mode is the following:
 <p align="center"><img src="assets/graph_controller.png" width="800" alt="controller mode graph"></p>
 
 #### Demonstration
-https://github.com/Canborda/robotics-ROS-2-PhantomX-forward_kinematics/assets/55401093/cf0c642b-6a47-4377-a112-f91548f0321e
+https://github.com/Canborda/robotics-ROS-2-PhantomX-forward_kinematics/assets/55401093/40f4864a-cd97-4052-b25b-a71fba0bcf25
 
 <br>
 
